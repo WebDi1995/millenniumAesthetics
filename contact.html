@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; Booking — Millennium Aesthetics</title>
+<meta name="description" content="Book a consultation or get in touch with Millennium Aesthetics, a dental clinic in Kathmandu specializing in prosthodontics and implants.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 4c-4 0-6 3-6 6 0 2 1 3 1 5l1 6h2l1-4h2l1 4h2l1-6c0-2 1-3 1-5 0-3-2-6-6-6z" fill="none" stroke="var(--blue-deep)" stroke-width="1.6"/>
+        <line x1="16" y1="21" x2="16" y2="24" stroke="var(--blue-deep)" stroke-width="1.6"/>
+        <path d="M13 24.5h6l-1.6 3h-2.8z" fill="var(--blue-signal)"/>
+        <line x1="16" y1="27.5" x2="16" y2="30" stroke="var(--blue-deep)" stroke-width="1.6"/>
+      </svg>
+      <span>
+        Millennium Aesthetics
+        <span class="brand-sub" data-en="Dental &amp; Implant Care" data-np="डेन्टल तथा इम्प्लान्ट सेवा">Dental &amp; Implant Care</span>
+      </span>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" data-en="Home" data-np="गृहपृष्ठ">Home</a></li>
+        <li><a href="services.html" data-en="Services" data-np="सेवाहरू">Services</a></li>
+        <li><a href="about.html" data-en="About" data-np="हाम्रोबारे">About</a></li>
+        <li><a href="gallery.html" data-en="Case Gallery" data-np="केस ग्यालरी">Case Gallery</a></li>
+        <li><a href="contact.html" aria-current="page" data-en="Contact" data-np="सम्पर्क">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button type="button" class="active" data-lang="en">EN</button>
+        <button type="button" data-lang="np">नेपाली</button>
+      </div>
+      <a href="contact.html" class="btn btn-primary nav-cta" data-en="Book Appointment" data-np="अपोइन्टमेन्ट बुक गर्नुहोस्">Book Appointment</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow" data-en="Contact &amp; Booking" data-np="सम्पर्क तथा बुकिङ">Contact &amp; Booking</span>
+      <h1 data-en="Let's find a time that works." data-np="मिल्ने समय पत्ता लगाऔं।">Let's find a time that works.</h1>
+      <p style="max-width:640px;" data-en="Fill out the form and our team will confirm your appointment by phone or SMS. For urgent concerns, please call the clinic directly." data-np="फारम भर्नुहोस् र हाम्रो टिमले फोन वा SMS मार्फत तपाईंको अपोइन्टमेन्ट पुष्टि गर्नेछ। तत्काल समस्याका लागि कृपया क्लिनिकमा सिधै फोन गर्नुहोस्।">Fill out the form and our team will confirm your appointment by phone or SMS. For urgent concerns, please call the clinic directly.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap grid-2" style="align-items:start;">
+
+      <!-- BOOKING FORM -->
+      <div class="card" style="padding:32px;">
+        <h2 style="margin-bottom:6px;" data-en="Book a Consultation" data-np="परामर्श बुक गर्नुहोस्">Book a Consultation</h2>
+        <p style="margin-bottom:24px;" data-en="This form is a placeholder — connect it to your booking system or clinic email before launch." data-np="यो फारम प्लेसहोल्डर हो — सुरु गर्नुअघि यसलाई तपाईंको बुकिङ प्रणाली वा क्लिनिक इमेलसँग जडान गर्नुहोस्।">This form is a placeholder — connect it to your booking system or clinic email before launch.</p>
+
+        <form class="booking-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fname" data-en="Full Name" data-np="पूरा नाम">Full Name</label>
+              <input type="text" id="fname" name="fname" required
+                     data-en-ph="Sita Sharma" data-np-ph="सीता शर्मा"
+                     placeholder="Sita Sharma">
+            </div>
+            <div class="form-field">
+              <label for="phone" data-en="Phone Number" data-np="फोन नम्बर">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="98XXXXXXXX" required>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="email" data-en="Email (optional)" data-np="इमेल (वैकल्पिक)">Email (optional)</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+          </div>
+
+          <div class="form-field">
+            <label for="service" data-en="What do you need?" data-np="तपाईंलाई के चाहिन्छ?">What do you need?</label>
+            <select id="service" name="service">
+              <option data-en="General check-up" data-np="सामान्य जाँच">General check-up</option>
+              <option data-en="Dental implant consultation" data-np="डेन्टल इम्प्लान्ट परामर्श">Dental implant consultation</option>
+              <option data-en="Crowns, bridges, or dentures" data-np="क्राउन, ब्रिज, वा डेन्चर">Crowns, bridges, or dentures</option>
+              <option data-en="Root canal / pain" data-np="रुट क्यानल / दुखाइ">Root canal / pain</option>
+              <option data-en="Cosmetic dentistry" data-np="कस्मेटिक डेन्टिस्ट्री">Cosmetic dentistry</option>
+              <option data-en="Something else" data-np="अन्य">Something else</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="preferred" data-en="Preferred Day" data-np="रुचाइएको दिन">Preferred Day</label>
+            <input type="date" id="preferred" name="preferred">
+          </div>
+
+          <div class="form-field">
+            <label for="notes" data-en="Notes (optional)" data-np="टिप्पणी (वैकल्पिक)">Notes (optional)</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Anything we should know before your visit?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" data-en="Request Appointment" data-np="अपोइन्टमेन्ट अनुरोध गर्नुहोस्">Request Appointment</button>
+
+          <p class="form-success" data-en="Thanks — this is a placeholder confirmation. Wire this form up to email or a booking system to make it live." data-np="धन्यवाद — यो प्लेसहोल्डर पुष्टिकरण हो। यसलाई वास्तविक बनाउन इमेल वा बुकिङ प्रणालीसँग जडान गर्नुहोस्।">Thanks — this is a placeholder confirmation. Wire this form up to email or a booking system to make it live.</p>
+        </form>
+      </div>
+
+      <!-- CONTACT INFO + MAP -->
+      <div>
+        <h2 style="margin-bottom:20px;" data-en="Visit or Call Us" data-np="भ्रमण गर्नुहोस् वा फोन गर्नुहोस्">Visit or Call Us</h2>
+        <ul class="info-list">
+          <li>
+            <span class="k" data-en="Address" data-np="ठेगाना">Address</span>
+            <span>Putalisadak, Kathmandu 44600, Nepal</span>
+          </li>
+          <li>
+            <span class="k" data-en="Phone" data-np="फोन">Phone</span>
+            <span><a href="tel:+9779800000000">+977 98-0000-0000</a></span>
+          </li>
+          <li>
+            <span class="k" data-en="Email" data-np="इमेल">Email</span>
+            <span><a href="mailto:hello@millenniumaesthetics.example">hello@millenniumaesthetics.example</a></span>
+          </li>
+          <li>
+            <span class="k" data-en="Hours" data-np="समय">Hours</span>
+            <span data-en="Sunday – Friday, 9:00 AM – 5:00 PM. Closed Saturdays." data-np="आइतबार – शुक्रबार, बिहान ९ – साँझ ५। शनिबार बन्द।">Sunday – Friday, 9:00 AM – 5:00 PM. Closed Saturdays.</span>
+          </li>
+        </ul>
+
+        <div class="map-frame" style="margin-top:24px;">
+          <iframe
+            title="Millennium Aesthetics location map"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=85.3170%2C27.7040%2C85.3280%2C27.7110&layer=mapnik&marker=27.7075%2C85.3225"
+            loading="lazy">
+          </iframe>
+        </div>
+        <p class="form-note" data-en="Map center is a placeholder — update the marker to the clinic's exact coordinates before launch." data-np="नक्साको केन्द्र प्लेसहोल्डर हो — सुरु गर्नुअघि क्लिनिकको सही स्थानमा अद्यावधिक गर्नुहोस्।">Map center is a placeholder — update the marker to the clinic's exact coordinates before launch.</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4 data-en="Millennium Aesthetics" data-np="मिलेनियम एस्थेटिक्स">Millennium Aesthetics</h4>
+        <p data-en="Dental &amp; implant care, built on precision." data-np="सटीकतामा आधारित डेन्टल तथा इम्प्लान्ट सेवा।">Dental &amp; implant care, built on precision.</p>
+        <div class="badge-row">
+          <span class="badge">NMC Registered</span>
+          <span class="badge">Est. 2013</span>
+        </div>
+      </div>
+      <div>
+        <h4 data-en="Explore" data-np="पेजहरू">Explore</h4>
+        <a href="services.html" data-en="Services" data-np="सेवाहरू">Services</a>
+        <a href="about.html" data-en="About Us" data-np="हाम्रोबारे">About Us</a>
+        <a href="gallery.html" data-en="Case Gallery" data-np="केस ग्यालरी">Case Gallery</a>
+      </div>
+      <div>
+        <h4 data-en="Visit" data-np="ठेगाना">Visit</h4>
+        <p>Putalisadak, Kathmandu 44600, Nepal</p>
+        <p>Sun–Fri · 9:00–17:00</p>
+      </div>
+      <div>
+        <h4 data-en="Contact" data-np="सम्पर्क">Contact</h4>
+        <a href="tel:+9779800000000">+977 98-0000-0000</a>
+        <a href="mailto:hello@millenniumaesthetics.example">hello@millenniumaesthetics.example</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="year">2026</span> Millennium Aesthetics. All rights reserved.</span>
+      <span data-en="Placeholder content — replace before launch" data-np="प्लेसहोल्डर सामग्री — सुरु गर्नुअघि परिवर्तन गर्नुहोस्">Placeholder content — replace before launch</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
