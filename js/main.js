@@ -44,23 +44,77 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* Booking form (placeholder — no backend wired up yet) ------------------ */
-  var bookingForm = document.querySelector('.booking-form');
+  /* Booking form → Formspree https://formspree.io/f/mrpzenzr */
+  var bookingForm = document.getElementById('bookingForm');
   if (bookingForm) {
-    bookingForm.addEventListener('submit', function (e) {
+    bookingForm.addEventListener('submit', async function (e) {
       e.preventDefault();
-      var success = document.querySelector('.form-success');
-      if (success) {
-        success.classList.add('show');
-        success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      var submitBtn = bookingForm.querySelector('button[type="submit"]');
+      var successEl = document.getElementById('formSuccess');
+      var errorEl = document.getElementById('formError');
+      var originalText = submitBtn ? submitBtn.textContent : '';
+
+      if (successEl) { successEl.style.display = 'none'; successEl.classList.remove('show'); }
+      if (errorEl) { errorEl.style.display = 'none'; errorEl.textContent = ''; }
+
+      // Basic validation
+      var fname = document.getElementById('fname');
+      var phone = document.getElementById('phone');
+      if (!fname.value.trim() || !phone.value.trim()) {
+        if (errorEl) {
+          errorEl.textContent = currentLang === 'np' ? 'कृपया नाम र फोन नम्बर भर्नुहोस्।' : 'Please fill name and phone.';
+          errorEl.style.display = 'block';
+        }
+        return;
       }
-      bookingForm.reset();
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = currentLang === 'np' ? 'पठाउँदै...' : 'Sending...';
+      }
+
+      try {
+        var formData = new FormData(bookingForm);
+        // Set _replyto to email field if provided
+        var emailVal = document.getElementById('email')?.value || '';
+        if (emailVal) formData.set('_replyto', emailVal);
+
+        const res = await fetch(bookingForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          if (successEl) {
+            successEl.style.display = 'block';
+            successEl.classList.add('show');
+            successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+          bookingForm.reset();
+        } else {
+          const data = await res.json().catch(()=>({}));
+          throw new Error(data.error || 'Formspree error');
+        }
+      } catch (err) {
+        console.error(err);
+        if (errorEl) {
+          errorEl.textContent = currentLang === 'np'
+            ? 'पठाउन सकिएन। कृपया सिधै फोन गर्नुहोस्।'
+            : 'Could not send. Please call us directly or try again.';
+          errorEl.style.display = 'block';
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      }
     });
   }
 
-  /* Footer year ------------------------------------------------------------ */
+  /* Footer year */
   document.querySelectorAll('.year').forEach(function (el) {
     el.textContent = new Date().getFullYear();
   });
-
 });
