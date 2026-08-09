@@ -63,7 +63,7 @@
         <h2 style="margin-bottom:6px;" data-en="Book a Consultation" data-np="परामर्श बुक गर्नुहोस्">Book a Consultation</h2>
         <p style="margin-bottom:24px;" data-en="This form is a placeholder — connect it to your booking system or clinic email before launch." data-np="यो फारम प्लेसहोल्डर हो — सुरु गर्नुअघि यसलाई तपाईंको बुकिङ प्रणाली वा क्लिनिक इमेलसँग जडान गर्नुहोस्।">This form is a placeholder — connect it to your booking system or clinic email before launch.</p>
 
-        <form class="booking-form">
+        <form class="booking-form" id="bookingForm" action="https://formspree.io/f/mrpzenzr" method="POST">
           <div class="form-row">
             <div class="form-field">
               <label for="fname" data-en="Full Name" data-np="पूरा नाम">Full Name</label>
@@ -104,9 +104,12 @@
             <textarea id="notes" name="notes" rows="4" placeholder="Anything we should know before your visit?"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary" data-en="Request Appointment" data-np="अपोइन्टमेन्ट अनुरोध गर्नुहोस्">Request Appointment</button>
+          <input type="hidden" name="_subject" value="New Appointment Request - Millennium Aesthetics">
+          <input type="hidden" name="_replyto" value="">
+          <button type="submit" class="btn btn-primary" data-en="Request Appointment" data-np="अपोइन्टमेन्ट अनुरोध गर्नुहोस्">Request Appointment</button>          
 
-          <p class="form-success" data-en="Thanks — this is a placeholder confirmation. Wire this form up to email or a booking system to make it live." data-np="धन्यवाद — यो प्लेसहोल्डर पुष्टिकरण हो। यसलाई वास्तविक बनाउन इमेल वा बुकिङ प्रणालीसँग जडान गर्नुहोस्।">Thanks — this is a placeholder confirmation. Wire this form up to email or a booking system to make it live.</p>
+          <p class="form-success" id="formSuccess" style="display:none;" data-en="Thanks — we received your request. We’ll confirm by phone/SMS shortly." data-np="धन्यवाद — हामीले तपाईंको अनुरोध प्राप्त गर्यौं। हामी फोन/SMS मार्फत पुष्टि गर्नेछौं।">Thanks — we received your request. We’ll confirm by phone/SMS shortly.</p>
+          <p class="form-success" id="formError" style="display:none; background:#FFF0F0; border-color:#E53E3E;"></p>
         </form>
       </div>
 
